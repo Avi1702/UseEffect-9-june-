@@ -1,0 +1,24 @@
+{
+  "todos": [
+    {
+      "title": "Bathing",
+      "status": false,
+      "id": 1
+    },
+    {
+      "title": "Walking",
+      "status": false,
+      "id": 2
+    },
+    {
+      "title": "Breakfast",
+      "status": false,
+      "id": 3
+    },
+    {
+      "title": "Reading",
+      "status": false,
+      "id": 4
+    }
+  ]
+}
