@@ -19,6 +19,41 @@
       "title": "Reading",
       "status": false,
       "id": 4
+    },
+    {
+      "title": "Dancing",
+      "status": false,
+      "id": 5
+    },
+    {
+      "title": "Watching",
+      "status": false,
+      "id": 6
+    },
+    {
+      "title": "Drinking",
+      "status": false,
+      "id": 7
+    },
+    {
+      "title": "Running",
+      "status": false,
+      "id": 8
+    },
+    {
+      "title": "Playing",
+      "status": false,
+      "id": 9
+    },
+    {
+      "title": "Workout",
+      "status": false,
+      "id": 10
+    },
+    {
+      "title": "Dinner",
+      "status": false,
+      "id": 11
     }
   ]
 }

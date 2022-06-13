@@ -5,22 +5,27 @@ import GroceryList from './GroceryList';
 
 function Grocery(){
     const [data,setData]=React.useState([])
+    const [loading,setLoading]=React.useState(false)
+    const [page,setPage]=React.useState(1)
 
     React.useEffect(()=>{
-      fetch(`http://localhost:3001/todos`)
+      setLoading(true);
+      fetch(`http://localhost:3001/todos?_page=${page}&_limit=3`)
       .then((res)=>res.json())
-      .then((res)=>setData(res))
+      .then((res)=>{setData(res);
+            setLoading(false);})
       .catch((error)=>console.log(error))
-    },[])
+     
+    },[page])
   
     const handleAdd=(value)=>{
-      console.log(value)
+      // console.log(value)
       const payload={
         title:value,
         status:false
       };
-
-        fetch(`http://localhost:3001/todos`,
+        setLoading(true)
+        fetch(`http://localhost:3001/todos?_page=${page}&_limit={3}`,
         {
           method: "POST",
           body: JSON.stringify(payload),
@@ -29,7 +34,7 @@ function Grocery(){
           }
         })
         .then((res)=>res.json())
-        .then((res)=>console.log(res))
+        .then((res)=>{console.log(res);setLoading(false);})
         .catch((error)=>console.log(error))
         
         // id:uuidv4()
@@ -56,12 +61,16 @@ function Grocery(){
       
     }
   
-    return(
+    return loading?(<p>Loading...</p>):(
       <>
       <h1>Your ToDo's</h1>
     <GroceryInput handleAdd={handleAdd} />
 
     <GroceryList data={data} handleDelete={handleDelete} handleStatus={handleStatus}/>
+
+    
+    <button onClick={()=>setPage(page-1)} disabled={page===1}>Previous</button>
+    <button onClick={()=>setPage(page+1)}>Next</button>
     </>
     
     );
