@@ -1,7 +1,7 @@
 
 import './App.css';
 import React from "react";
-import Grocery from './components/Grocery.jsx';
+import Todo from './components/Todo.jsx';
 
 
 
@@ -11,7 +11,7 @@ import Grocery from './components/Grocery.jsx';
 function App() {
 return(
   <div className="App">
-   <Grocery />
+   <Todo />
   </div>
 )
 }

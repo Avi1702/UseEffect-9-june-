@@ -1,6 +1,6 @@
 import React from "react";
 
-function GroceryList({data, handleDelete, handleStatus}){
+function TodoList({data, handleDelete, handleStatus}){
 
    
     return(
@@ -29,7 +29,7 @@ function GroceryList({data, handleDelete, handleStatus}){
     );
  }
 
-  export default GroceryList
+  export default TodoList
   
   
   
